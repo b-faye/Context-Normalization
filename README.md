@@ -96,13 +96,16 @@ In this experiment, we use a shallow deep CNN in architectures in Mixture Normal
 <br>
 ### <center> A Comparative Study Using Deep Neural Network: Context Normalization vs. Mixture Normalization with GMM Components as Contexts. </center>
 
-In this experiment, we use a Deep CNN architectures: DenseNet-40 and DenseNet-100.
+In this experiment, we use a Deep CNN architectures: DenseNet-40 and DenseNet-100.<br>
+<br>
+
 ![Cluster](images/densenet.png "t-SNE visualization of activations in latent space after 25, 50, 70 and 100 training epochs. Context Normalization (CN) on CIFAR-10, showing the formation and refinement of class-specific clusters over training epochs.")
-**Figure: t-SNE visualization of activations in latent space after 25, 50, 70, and 100 training epochs. Context Normalization (CN) on CIFAR-10, showing the formation and refinement of class-specific clusters over training epochs.**
-
-
-
-
+**Figure: The training/test error and cross-entropy loss are depicted for DenseNet with $40$ layers (DenseNet-40) and DenseNet with $100$ layers (DenseNet-100). Notably, the incorporation of CN significantly enhances the training process, expediting optimization. Concurrently, it demonstrates superior generalization, as evidenced by a consistently substantial margin compared to its batch normalized and mixture normalized counterparts in the error curve.**
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### <center> Using CIFAR-100 Superclasses as Contexts </center>
 
@@ -113,6 +116,15 @@ In this experimental setup, we employ the Vision Transformer architecture as our
 |---------------------|----------|-----------|--------|----------|
 | ViT+BN              | 55.63    | 8.96      | 90.09  | 54.24    |
 | **ViT+CN**    | **65.87**    | **23.36** | **98.53**  | **65.69**    |
+
+![Cluster](images/vit_cifar100_loss.png "t-SNE visualization of activations in latent space after 25, 50, 70 and 100 training epochs. Context Normalization (CN) on CIFAR-10, showing the formation and refinement of class-specific clusters over training epochs.")
+**Figure: Comparing Training and Validation Error Curves: CN in ViT Architecture on CIFAR-100 show faster convergence and lower validation loss, enhancing learning efficiency and classification compared to BN..**
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ### <center> **Using Oxford-IIIT Superclasses as contexts** </center>
 
@@ -125,6 +137,11 @@ In this experiment, we employ a CNN architecture as the [baseline](https://githu
 | OxfordCNN+CN     | Epoch 80   | 64.90     | 52.34      | 83.10   | 73.11     |
 |                        | Epoch 113  | 67.52     | 55.12      | 86.13   | 75.90     |
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### <center>**Domain Adaptation: Using Source and Target Domains as Contexts**</center>
 
@@ -142,3 +159,9 @@ To apply CN coherently, we implement unsupervised domain adaptation using [AdaMa
 |------------------------|-----------|------------|---------|-----------|
 | AdaMatch              | 25.08     | 31.64      | 20.46   | 24.73     |
 | AdaMatch+CN    | **43.10**     | **53.83**      | **43.10**   | **47.46**     |
+
+<br>
+
+![Cluster](images/domain.png "t-SNE visualization of activations in latent space after 25, 50, 70 and 100 training epochs. Context Normalization (CN) on CIFAR-10, showing the formation and refinement of class-specific clusters over training epochs.")
+
+**Figure: Gradient Variance Evolution: AdaMatch+BN and AdaMatch+CN models during training on the source (MNIST) and target (SVHN) domains. Left: Max gradient variance per epoch. Right: Average gradient variance per epoch.**
