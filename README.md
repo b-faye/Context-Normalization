@@ -2,6 +2,9 @@
 
 This repository is an official implementation and applications of CN: Context Normalization.
 
+## Paper Submitted to EGC 2024. Bilal FAYE et al. (Best Paper Award): (Link)[https://editions-rnti.fr/?inprocid=1002907]
+
+
 ## Introduction
 
 CN (Context Normalization) is a novel approach in neural networks that leverages context-based data grouping for faster convergence and superior performance, distinguishing itself from traditional methods like Batch Normalization and Mixture Normalization.
@@ -162,6 +165,19 @@ To apply CN coherently, we implement unsupervised domain adaptation using [AdaMa
 
 <br>
 
+
 ![Cluster](images/domain.png "t-SNE visualization of activations in latent space after 25, 50, 70 and 100 training epochs. Context Normalization (CN) on CIFAR-10, showing the formation and refinement of class-specific clusters over training epochs.")
 
 **Figure: Gradient Variance Evolution: AdaMatch+BN and AdaMatch+CN models during training on the source (MNIST) and target (SVHN) domains. Left: Max gradient variance per epoch. Right: Average gradient variance per epoch.**
+
+
+
+
+```bash
+@inproceedings{faye2024normalization,
+  title={Context Normalization},
+  author={Faye, Bilal and Azzag, Hanane and Lebbah, Mustapha and Fangchen, Fang},
+  booktitle={Extraction et la Gestion des Connaissances (EGC)},
+  year={2024}
+}
+```
